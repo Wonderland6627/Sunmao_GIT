@@ -1,11 +1,7 @@
 ﻿/**
-*	Copyright(C) #YEAR# by #COMPANY#
-*	All rights reserved.
-*	FileName: #SCRIPTFULLNAME#
 *	Author: #AUTHOR#
-*	Version: #VERSION#
-*	UnityVersion：#UNITYVERSION#
 *	Date: #DATE#
+*	Version: #VERSION#
 *	Description: 
 */
 
