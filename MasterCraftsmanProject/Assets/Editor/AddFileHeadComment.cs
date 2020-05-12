@@ -32,13 +32,9 @@ public class AddFileHeadComment : UnityEditor.AssetModificationProcessor
         string scriptContent = File.ReadAllText(realPath);
 
         //这里实现自定义的一些规则
-        scriptContent = scriptContent.Replace("#YEAR#", "2020");
-        scriptContent = scriptContent.Replace("#SCRIPTFULLNAME#", Path.GetFileName(newFilePath));
-        scriptContent = scriptContent.Replace("#COMPANY#", PlayerSettings.companyName);
         scriptContent = scriptContent.Replace("#AUTHOR#", "Wonderland6627");
-        scriptContent = scriptContent.Replace("#VERSION#", "1.0");
-        scriptContent = scriptContent.Replace("#UNITYVERSION#", Application.unityVersion);
-        scriptContent = scriptContent.Replace("#DATE#", System.DateTime.Now.ToString("yyyy-MM-dd"));
+        scriptContent = scriptContent.Replace("#VERSION#", MasterCraftsman.Version.SoftwareVersion);
+        scriptContent = scriptContent.Replace("#DATE#", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
         File.WriteAllText(realPath, scriptContent);
     }
