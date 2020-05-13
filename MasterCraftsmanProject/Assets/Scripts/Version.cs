@@ -2,7 +2,7 @@
 *	Author: Wonderland6627
 *	Version: 0.0
 *	Date: 2020-05-12 21:27:38
-*	Description: 版本
+*	Description: 版本信息
 */
 
 using System.Collections;
