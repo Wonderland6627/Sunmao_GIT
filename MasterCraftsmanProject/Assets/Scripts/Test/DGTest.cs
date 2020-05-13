@@ -17,5 +17,6 @@ public class DGTest : MonoBehaviour
     private void Start()
     {
         cube.transform.DOLocalMoveX(10, 2f).SetEase(Ease.Linear);
+        Debug.Log("a");
     }
 }
