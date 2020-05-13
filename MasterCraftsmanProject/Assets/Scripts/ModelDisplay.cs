@@ -13,7 +13,7 @@ using DG.Tweening;
 
 namespace MasterCraftsman
 {
-    public class ModelDisplay : MonoBehaviour, IDragHandler ,IPointerClickHandler
+    public class ModelDisplay : MonoBehaviour, IDragHandler, IPointerClickHandler
     {
         [Header("展示模型")]
         public Transform displayModel;
@@ -21,32 +21,43 @@ namespace MasterCraftsman
         public bool isDrag = false;
 
         private Vector3 targetVec;//目标旋转位置
-        [SerializeField]
         private Vector3 startVec;//初始位置
         private float dragDuration = 0.2f;
         private float backDuration = 1f;
 
+        private Tweener rotateTweener;
+
         public void OnInit(object param = null)
         {
+            rotateTweener = null;
             startVec = displayModel.localRotation.eulerAngles;
+        }
+
+        private void OnDestroy()
+        {
+            rotateTweener = null;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            isDrag = true;
-            //targetVec.x += eventData.delta.y;
-            targetVec.y += -eventData.delta.x;
-            displayModel.DOLocalRotate(targetVec, dragDuration);
-            targetVec = displayModel.localRotation.eulerAngles;
+            if (eventData.dragging)
+            {
+                isDrag = true;
+                targetVec.z += -eventData.delta.y;
+                targetVec.y += -eventData.delta.x;
+                rotateTweener = displayModel.DOLocalRotate(targetVec, dragDuration);
+                targetVec = displayModel.localRotation.eulerAngles;
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
             if (!isDrag)
             {
-                displayModel.DOLocalRotate(startVec, backDuration);
+                rotateTweener = displayModel.DOLocalRotate(startVec, backDuration);
             }
             isDrag = false;
+            rotateTweener = null;
         }
     }
 }

@@ -5,34 +5,74 @@ using UnityEngine;
 namespace MasterCraftsman
 {
     /// <summary>
-    /// 管理FingertipBallet的所有音效，单例
+    /// 管理MasterCraftsman的所有音效，单例
     /// </summary>
     public class AudioSoundManager : GenericSingleton<AudioSoundManager>
     {
-        public List<AudioSource> audioSources = new List<AudioSource>();
+        private class Sound
+        {
+            public string name;
+            public AudioSource audioSource;
+        }
+
+        private List<Sound> soundsList = new List<Sound>();
+
+        private void Start()
+        {
+            InvokeRepeating("RemoveList", 1, 1);
+        }
+
+        public void PlayBGM(string path)
+        {
+
+        }
 
         /// <summary>
-        /// 播放clip音效，播放后销毁
+        /// 播放soundName音效
         /// </summary>
-        public void PlaySound(AudioClip clip, GameObject go = null)
+        public AudioSource Play(string soundName, bool loop = false, GameObject target = null)
         {
-            AudioSource aud = null;
-            float duration = clip.length;
-
-            if(go != null)
+            if (string.IsNullOrEmpty(soundName))
             {
-                aud = go.AddComponent(typeof(AudioSource)) as AudioSource;
-            }
-            else
-            {
-                aud = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+                return null;
             }
 
-            aud.clip = clip;
-            aud.playOnAwake = false;
-            aud.Play();
+            string soundPath = "Audios/" + soundName;
 
-            Destroy(aud, duration);
+            AudioClip audioClip = ResourcesManager.Load<AudioClip>(soundPath);
+            if (audioClip == null)
+            {
+                return null;
+            }
+            float duration = audioClip.length;
+
+            if (target == null)
+            {
+                target = gameObject;
+            }
+
+            var audioSource = target.AddComponent<AudioSource>();
+            audioSource.loop = loop;
+            audioSource.playOnAwake = true;
+            audioSource.clip = audioClip;
+            audioSource.Play();
+
+            if (!loop)
+            {
+                Destroy(audioSource, duration);
+            }
+
+            Sound sound = new Sound();
+            sound.name = soundName;
+            sound.audioSource = audioSource;
+            soundsList.Add(sound);
+
+            return audioSource;
+        }
+
+        private void RemoveList()
+        {
+            soundsList.RemoveAll((Sound sound) => { return sound.audioSource == null; });
         }
     }
 }
