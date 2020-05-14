@@ -50,5 +50,20 @@ namespace MasterCraftsman
             }
             return instance;
         }
+
+        /// <summary>
+        /// 加载View
+        /// </summary>
+        public SunmaoView OpenView(string name)
+        {
+            string path = "Prefabs/SunmaoView/" + name;
+            SunmaoView view = LoadAndInit<SunmaoView>(path);
+            if (view)
+            {
+                return view;
+            }
+
+            return null;
+        }
     }
 }
