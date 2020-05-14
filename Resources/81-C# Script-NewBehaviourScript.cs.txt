@@ -1,7 +1,7 @@
 ﻿/**
 *	Author: #AUTHOR#
-*	Date: #DATE#
 *	Version: #VERSION#
+*	Date: #DATE#
 *	Description: 
 */
 
