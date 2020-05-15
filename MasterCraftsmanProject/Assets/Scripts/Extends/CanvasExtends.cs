@@ -13,9 +13,13 @@ namespace MasterCraftsman.Extends
                 if (value)
                 {
                     canvasGroup.alpha = 1f;
+                    canvasGroup.blocksRaycasts = true;
+                    canvasGroup.interactable = true;
                 }
                 else
                 {
+                    canvasGroup.interactable = false;
+                    canvasGroup.blocksRaycasts = false;
                     canvasGroup.alpha = 0;
                 }
             }

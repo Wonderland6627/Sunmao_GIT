@@ -20,7 +20,7 @@ namespace MasterCraftsman
         [Header("最小缩放")]
         public float minScale;
         [Header("最大缩放")]
-        public float maxScale;  
+        public float maxScale;
 
         private Vector3 targetVec;//目标旋转位置
         private Vector3 startVec;//初始位置
