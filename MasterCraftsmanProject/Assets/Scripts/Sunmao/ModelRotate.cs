@@ -42,11 +42,26 @@ namespace MasterCraftsman
             modelAngle = 360f / count;
 
             rotateTweener = null;
+            displayMenu.parent.gameObject.SetActive(true);
         }
 
         private void OnDestroy()
         {
             rotateTweener = null;
+        }
+
+        [ContextMenu("SetChildPos")]
+        public void SetChildPos()
+        {
+            var count = displayMenu.childCount;
+            var modelAngle = 360.0f / count;
+            for (int i = 0; i < count; i++)
+            {
+                var go = displayMenu.GetChild(i);
+                Debug.Log(go.name);
+                go.localRotation = Quaternion.Euler(new Vector3(0, modelAngle * i, 0));
+                go.transform.Translate(0, 0, -12);
+            }
         }
 
         private void InitSunmaoList()
@@ -79,7 +94,7 @@ namespace MasterCraftsman
                 {
                     dragOffset += eventData.delta.x;
                 }
-                targetVec.y += -eventData.delta.x / 2;
+                targetVec.y += -eventData.delta.x;
                 rotateTweener = displayMenu.DOLocalRotate(targetVec, dragDuration);
                 targetVec = displayMenu.localRotation.eulerAngles;
             }
@@ -130,7 +145,7 @@ namespace MasterCraftsman
                             var sunmao = FindFisrtSunmao();
                             Vector3 targetVec = Vector3.zero;
                             var index = sunmaoList.FindIndex((item) => { return sunmao == item; });
-                            targetVec.y += index * modelAngle;
+                            targetVec.y -= index * modelAngle;
                             rotateTweener = displayMenu.DOLocalRotate(targetVec, dragDuration);
                             currentSunmao = sunmao;
                             dragOffset = 0;

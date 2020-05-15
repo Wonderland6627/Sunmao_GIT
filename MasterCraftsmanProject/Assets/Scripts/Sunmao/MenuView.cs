@@ -25,6 +25,8 @@ namespace MasterCraftsman
         public ModelRotate modelRotate;
         [Header("展示模型")]
         public Transform displayModel;
+        [Header("展示背景")]
+        public GameObject backGroundPanel;
 
         public static MenuView Instance
         {
@@ -50,6 +52,9 @@ namespace MasterCraftsman
         public void OnStart(object param = null)
         {
             modelRotate.OnInit();
+            backGroundPanel.SetActive(true);
+            gameObject.SetActive(true);
+            OnChangeView(true);
         }
 
         public void OnChangeView(bool toMenu)
