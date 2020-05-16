@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4226937068558130}
   - component: {fileID: 95744090473931686}
   - component: {fileID: 114924240739122986}
+  - component: {fileID: 114545869843442908}
   m_Layer: 0
   m_Name: Sunmao_004
   m_TagString: Untagged
@@ -205,6 +206,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114545869843442908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1161020800832524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8164aec38c81e242865ca2fb5408f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunmaoName: 
 --- !u!114 &114924240739122986
 MonoBehaviour:
   m_ObjectHideFlags: 1

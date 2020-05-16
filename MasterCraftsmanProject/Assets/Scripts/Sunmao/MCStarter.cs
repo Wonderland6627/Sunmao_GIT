@@ -13,14 +13,22 @@ namespace MasterCraftsman
 {
     public class MCStarter : MonoBehaviour
     {
+        public GameObject start;
+
         private void Awake()
         {
+#if UNITY_STANDALONE
             Screen.SetResolution(540, 960, false);
+#elif UNITY_ANDROID
+            Screen.SetResolution(1080, 1920, true);
+#endif
             //Cursor.lockState = CursorLockMode.Confined;
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
+            yield return new WaitForSeconds(4f);
+            Destroy(start);
             MenuView.Instance.OnStart();
         }
     }

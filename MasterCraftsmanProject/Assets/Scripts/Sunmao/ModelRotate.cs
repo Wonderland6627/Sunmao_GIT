@@ -27,7 +27,7 @@ namespace MasterCraftsman
         [SerializeField]
         private float dragOffset = 0;
         private Vector3 targetVec;//目标旋转位置
-        private float dragDuration = 1f;
+        private float dragDuration = 0.8f;
         private float backDuration = 1f;
 
         private Tweener rotateTweener;
@@ -89,7 +89,7 @@ namespace MasterCraftsman
         {
             if (eventData.dragging)
             {
-                isDrag = true;
+                //isDrag = true;
                 if (CalcDragOffset())
                 {
                     dragOffset += eventData.delta.x;
@@ -125,36 +125,45 @@ namespace MasterCraftsman
         {
             if (eventData.clickCount == 2)
             {
-                SunmaoViewBase view = ResourcesManager.Instance.OpenView(currentSunmao.name + "_View");
-                view.OnInit();
+                SunmaoViewBase view = ResourcesManager.Instance.OpenView();
+                view.OnInit(currentSunmao.name);
                 MenuView.Instance.OnChangeView(false);
             }
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            if (isDrag)
-            {
-                Debug.Log(dragOffset);
-                if (rotateTweener != null)
-                {
-                    rotateTweener.OnComplete(() =>
-                    {
-                        //if(Mathf.Abs(dragOffset) >= (Screen.width / 2))//拖拽大于2/3个屏幕了 或者改成松手位置
-                        {
-                            var sunmao = FindFisrtSunmao();
-                            Vector3 targetVec = Vector3.zero;
-                            var index = sunmaoList.FindIndex((item) => { return sunmao == item; });
-                            targetVec.y -= index * modelAngle;
-                            rotateTweener = displayMenu.DOLocalRotate(targetVec, dragDuration);
-                            currentSunmao = sunmao;
-                            dragOffset = 0;
-                            Debug.Log("当前" + currentSunmao + sunmao.name);
-                        }
-                    });
-                }
-                isDrag = false;
-            }
+            ConfigRotate();
+            //if (isDrag)
+            //{
+            //    Debug.Log(dragOffset);
+            //    if (rotateTweener != null)
+            //    {
+            //        rotateTweener.OnComplete(() =>
+            //        {
+            //            //if(Mathf.Abs(dragOffset) >= (Screen.width / 2))//拖拽大于2/3个屏幕了 或者改成松手位置
+            //            {
+            //                //ConfigRotate();
+            //            }
+            //        });
+            //    }
+            //    isDrag = false;
+            //}
+        }
+
+        /// <summary>
+        /// 矫正旋转位置
+        /// </summary>
+        private void ConfigRotate()
+        {
+            var sunmao = FindFisrtSunmao();
+            Vector3 targetVec = Vector3.zero;
+            var index = sunmaoList.FindIndex((item) => { return sunmao == item; });
+            targetVec.y -= index * modelAngle;
+            rotateTweener = displayMenu.DOLocalRotate(targetVec, dragDuration);
+            currentSunmao = sunmao;
+            Debug.Log("当前" + currentSunmao + sunmao.name);
+            dragOffset = 0;
         }
     }
 }

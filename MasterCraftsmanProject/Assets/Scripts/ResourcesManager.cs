@@ -54,9 +54,9 @@ namespace MasterCraftsman
         /// <summary>
         /// 加载View
         /// </summary>
-        public SunmaoViewBase OpenView(string name)
+        public SunmaoViewBase OpenView()
         {
-            string path = "Prefabs/SunmaoView/" + name;
+            string path = "Prefabs/SunmaoView/SunmaoView";
             SunmaoViewBase view = LoadAndInit<SunmaoViewBase>(path);
             if (view)
             {

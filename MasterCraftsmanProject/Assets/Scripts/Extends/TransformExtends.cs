@@ -17,9 +17,9 @@ namespace MasterCraftsman.Extends
         /// <summary>
         /// 重置子旋转为0
         /// </summary>
-        public static void ResetLocalRotation(this Transform transform, Vector3 euler)
+        public static void ResetLocalRotation(this Transform transform)
         {
-            transform.localRotation = Quaternion.Euler(euler);
+            transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
 
         /// <summary>
@@ -27,6 +27,13 @@ namespace MasterCraftsman.Extends
         /// </summary>
         public static void ResetLocalScale(this Transform transform)
         {
+            transform.localScale = Vector3.zero;
+        }
+
+        public static void ResetTransform(this Transform transform)
+        {
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.Euler(Vector3.zero);
             transform.localScale = Vector3.zero;
         }
 
