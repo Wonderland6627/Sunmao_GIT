@@ -60,7 +60,7 @@ namespace MasterCraftsman
                 var go = displayMenu.GetChild(i);
                 Debug.Log(go.name);
                 go.localRotation = Quaternion.Euler(new Vector3(0, modelAngle * i, 0));
-                go.transform.Translate(0, 0, -12);
+                go.transform.Translate(0, 0, -20);
             }
         }
 

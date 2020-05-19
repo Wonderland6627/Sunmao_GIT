@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 using MasterCraftsman.Extends;
 
@@ -27,6 +28,12 @@ namespace MasterCraftsman
         public Transform displayModel;
         [Header("展示背景")]
         public GameObject backGroundPanel;
+        [Header("声音按钮")]
+        public Button soundBtn;
+        [Header("静音提示")]
+        public GameObject muteTips;
+
+        private bool isMute = false;
 
         public static MenuView Instance
         {
@@ -52,9 +59,25 @@ namespace MasterCraftsman
         public void OnStart(object param = null)
         {
             modelRotate.OnInit();
+            soundBtn.AddButtonClickEvent(MuteAudio);
             backGroundPanel.SetActive(true);
             gameObject.SetActive(true);
-            OnChangeView(true);
+            FirstView();
+        }
+
+        private void MuteAudio()
+        {
+            isMute = !isMute;
+            muteTips.SetActive(isMute);
+            AudioSoundManager.Instance.MuteSounds(isMute);
+        }
+
+        private void FirstView()
+        {
+            displayModel.localPosition = new Vector3(0, -50, 15);
+            modelTweener = displayModel.DOLocalMoveY(2.5f, 1f);
+            cameraTweener = mainCamera.DOLocalMoveZ(-24.5f, 1f);
+            canvasGroup.DisplayCanvasGroup(true);
         }
 
         public void OnChangeView(bool toMenu)
@@ -69,12 +92,12 @@ namespace MasterCraftsman
         {
             if (toMenu)
             {
-                displayModel.localPosition = new Vector3(0, 30, 12);
+                displayModel.localPosition = new Vector3(0, 50, 15);
                 modelTweener = displayModel.DOLocalMoveY(2.5f, 1f);
             }
             else
             {
-                modelTweener = displayModel.DOLocalMoveY(-30f, 1f);
+                modelTweener = displayModel.DOLocalMoveY(-50f, 1f);
             }
         }
 
@@ -86,7 +109,7 @@ namespace MasterCraftsman
         {
             if (toMenu)
             {
-                cameraTweener = mainCamera.DOLocalMoveZ(-17, 1f);
+                cameraTweener = mainCamera.DOLocalMoveZ(-24.5f, 1f);
             }
             else
             {

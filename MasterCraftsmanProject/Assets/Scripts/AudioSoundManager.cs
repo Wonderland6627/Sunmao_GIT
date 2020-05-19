@@ -16,15 +16,50 @@ namespace MasterCraftsman
         }
 
         private List<Sound> soundsList = new List<Sound>();
+        private AudioSource currentBGM = null;
+        private string currentBGMName = null;
 
         private void Start()
         {
             InvokeRepeating("RemoveList", 1, 1);
         }
 
-        public void PlayBGM(string path)
+        public void MuteSounds(bool isMute)
         {
+            if (soundsList.Count > 0)
+            {
+                soundsList.ForEach((item) =>
+                {
+                    item.audioSource.mute = isMute;
+                });
+            }
+            
+            if (currentBGM)
+            {
+                currentBGM.mute = isMute;
+            }
+        }
 
+        public AudioSource PlayBGM(string soundName)
+        {
+            if (currentBGM != null && currentBGM.isPlaying && currentBGMName == soundName)
+            {
+                return currentBGM;
+            }
+
+            StopBGM();
+            currentBGM = Play(soundName, true);
+            currentBGMName = soundName;
+
+            return currentBGM;
+        }
+
+        public void StopBGM()
+        {
+            if (currentBGM != null)
+            {
+                Destroy(currentBGM);
+            }
         }
 
         /// <summary>
@@ -68,6 +103,17 @@ namespace MasterCraftsman
             soundsList.Add(sound);
 
             return audioSource;
+        }
+
+        public void Stop(string soundName)
+        {
+            foreach (var sound in soundsList)
+            {
+                if (sound.name == soundName && sound.audioSource != null)
+                {
+                    Destroy(sound.audioSource);
+                }
+            }
         }
 
         private void RemoveList()

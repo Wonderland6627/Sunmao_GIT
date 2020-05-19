@@ -14,7 +14,7 @@ namespace MasterCraftsman
     public class AnimEvent : MonoBehaviour
     {
         public bool isMute = false;//是否静音
-
+        
         public void PlaySound(string soundName)
         {
             if (!isMute)
