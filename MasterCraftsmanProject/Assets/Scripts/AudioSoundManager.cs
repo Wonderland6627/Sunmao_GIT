@@ -40,7 +40,7 @@ namespace MasterCraftsman
             }
         }
 
-        public AudioSource PlayBGM(string soundName)
+        public AudioSource PlayBGM(string soundName, float volume = 1)
         {
             if (currentBGM != null && currentBGM.isPlaying && currentBGMName == soundName)
             {
@@ -49,6 +49,7 @@ namespace MasterCraftsman
 
             StopBGM();
             currentBGM = Play(soundName, true);
+            currentBGM.volume = volume;
             currentBGMName = soundName;
 
             return currentBGM;

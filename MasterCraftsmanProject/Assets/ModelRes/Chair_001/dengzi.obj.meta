@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: ce8bbf7318fae2c489a8da7f5a172615
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: all_dengbian_001_Sunmao_002
+    100002: all_hengliang_001_Sunmao_003
+    100004: all_leg_001_Sunmao_005
+    100006: all_Sunmao_002_dengbian_002
+    100008: all_Sunmao_002_dengbian_003
+    100010: all_Sunmao_002_dengbian_004
+    100012: all_Sunmao_003_hengliang_002
+    100014: all_Sunmao_003_hengliang_003
+    100016: all_Sunmao_003_hengliang_004
+    100018: all_Sunmao_004_tuijia_002
+    100020: all_Sunmao_004_tuijia_003
+    100022: all_Sunmao_004_tuijia_004
+    100024: all_Sunmao_005_leg_002
+    100026: all_Sunmao_005_leg_003
+    100028: all_Sunmao_005_leg_004
+    100030: all_tuijia_001_Sunmao_004
+    100032: //RootNode
+    100034: Sunmao_001_all
+    400000: all_dengbian_001_Sunmao_002
+    400002: all_hengliang_001_Sunmao_003
+    400004: all_leg_001_Sunmao_005
+    400006: all_Sunmao_002_dengbian_002
+    400008: all_Sunmao_002_dengbian_003
+    400010: all_Sunmao_002_dengbian_004
+    400012: all_Sunmao_003_hengliang_002
+    400014: all_Sunmao_003_hengliang_003
+    400016: all_Sunmao_003_hengliang_004
+    400018: all_Sunmao_004_tuijia_002
+    400020: all_Sunmao_004_tuijia_003
+    400022: all_Sunmao_004_tuijia_004
+    400024: all_Sunmao_005_leg_002
+    400026: all_Sunmao_005_leg_003
+    400028: all_Sunmao_005_leg_004
+    400030: all_tuijia_001_Sunmao_004
+    400032: //RootNode
+    400034: Sunmao_001_all
+    2100000: all_dengbian_001_Sunmao_002Mat
+    2100002: all_hengliang_001_Sunmao_003Mat
+    2100004: all_leg_001_Sunmao_005Mat
+    2100006: all_Sunmao_002_dengbian_002Mat
+    2100008: all_Sunmao_002_dengbian_003Mat
+    2100010: all_Sunmao_002_dengbian_004Mat
+    2100012: all_Sunmao_003_hengliang_002Mat
+    2100014: all_Sunmao_003_hengliang_003Mat
+    2100016: all_Sunmao_003_hengliang_004Mat
+    2100018: all_Sunmao_004_tuijia_002Mat
+    2100020: all_Sunmao_004_tuijia_003Mat
+    2100022: all_Sunmao_004_tuijia_004Mat
+    2100024: all_Sunmao_005_leg_002Mat
+    2100026: all_Sunmao_005_leg_003Mat
+    2100028: all_Sunmao_005_leg_004Mat
+    2100030: all_tuijia_001_Sunmao_004Mat
+    2100032: Sunmao_001_allMat
+    2300000: all_dengbian_001_Sunmao_002
+    2300002: all_hengliang_001_Sunmao_003
+    2300004: all_leg_001_Sunmao_005
+    2300006: all_Sunmao_002_dengbian_002
+    2300008: all_Sunmao_002_dengbian_003
+    2300010: all_Sunmao_002_dengbian_004
+    2300012: all_Sunmao_003_hengliang_002
+    2300014: all_Sunmao_003_hengliang_003
+    2300016: all_Sunmao_003_hengliang_004
+    2300018: all_Sunmao_004_tuijia_002
+    2300020: all_Sunmao_004_tuijia_003
+    2300022: all_Sunmao_004_tuijia_004
+    2300024: all_Sunmao_005_leg_002
+    2300026: all_Sunmao_005_leg_003
+    2300028: all_Sunmao_005_leg_004
+    2300030: all_tuijia_001_Sunmao_004
+    2300032: Sunmao_001_all
+    3300000: all_dengbian_001_Sunmao_002
+    3300002: all_hengliang_001_Sunmao_003
+    3300004: all_leg_001_Sunmao_005
+    3300006: all_Sunmao_002_dengbian_002
+    3300008: all_Sunmao_002_dengbian_003
+    3300010: all_Sunmao_002_dengbian_004
+    3300012: all_Sunmao_003_hengliang_002
+    3300014: all_Sunmao_003_hengliang_003
+    3300016: all_Sunmao_003_hengliang_004
+    3300018: all_Sunmao_004_tuijia_002
+    3300020: all_Sunmao_004_tuijia_003
+    3300022: all_Sunmao_004_tuijia_004
+    3300024: all_Sunmao_005_leg_002
+    3300026: all_Sunmao_005_leg_003
+    3300028: all_Sunmao_005_leg_004
+    3300030: all_tuijia_001_Sunmao_004
+    3300032: Sunmao_001_all
+    4300000: all_dengbian_001_Sunmao_002
+    4300002: all_hengliang_001_Sunmao_003
+    4300004: all_leg_001_Sunmao_005
+    4300006: all_Sunmao_002_dengbian_002
+    4300008: all_Sunmao_002_dengbian_003
+    4300010: all_Sunmao_002_dengbian_004
+    4300012: all_Sunmao_003_hengliang_002
+    4300014: all_Sunmao_003_hengliang_003
+    4300016: all_Sunmao_003_hengliang_004
+    4300018: all_Sunmao_004_tuijia_002
+    4300020: all_Sunmao_004_tuijia_003
+    4300022: all_Sunmao_004_tuijia_004
+    4300024: all_Sunmao_005_leg_002
+    4300026: all_Sunmao_005_leg_003
+    4300028: all_Sunmao_005_leg_004
+    4300030: all_tuijia_001_Sunmao_004
+    4300032: Sunmao_001_all
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

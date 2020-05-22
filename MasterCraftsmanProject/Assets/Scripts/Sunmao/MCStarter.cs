@@ -22,7 +22,7 @@ namespace MasterCraftsman
 #elif UNITY_ANDROID
             Screen.SetResolution(1080, 1920, true);
 #endif
-            AudioSoundManager.Instance.PlayBGM("BGM_GSLS");
+            AudioSoundManager.Instance.PlayBGM("BGM_GSLS", 0.3f);
         }
 
         private IEnumerator Start()
