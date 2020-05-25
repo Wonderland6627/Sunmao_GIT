@@ -14,10 +14,8 @@ using MasterCraftsman.Extends;
 
 namespace MasterCraftsman
 {
-    public class SunmaoViewBase : MonoBehaviour
-    {
-        [Header("CanvasGroup")]
-        public CanvasGroup canvasGroup;
+    public class SunmaoView : CraftsViewBase
+    { 
         [Header("模型展示")]
         public ModelDisplay modelDisplay;
         [Header("模型动画")]
@@ -36,15 +34,13 @@ namespace MasterCraftsman
         public Button explodeBtn;
         [Header("合并按钮")]
         public Button combineBtn;
-        [Header("关闭按钮")]
-        public Button closeBtn;
-
+        
         private bool isCombine = true;//是否为合并状态
         private bool isPull = false;//是否拉动绳子
         private const string sunmaoPath = "Prefabs/SunmaoPrefabs/";
         private const string messageImgPath = "Images/";
 
-        public void OnInit(object param = null)
+        public override void OnInit(object param = null)
         {
             if (param != null)
             {
@@ -88,14 +84,7 @@ namespace MasterCraftsman
             combineBtn.AddButtonClickEvent(CombineModel);
             closeBtn.AddButtonClickEvent(OnClose);
 
-            OpenAnim();
-        }
-
-        protected void OpenAnim()
-        {
-            transform.localScale = Vector3.zero;
-            canvasGroup.DisplayCanvasGroup(true);
-            transform.DOScale(1, 0.5f);
+            base.OnOpen();
         }
 
         private void PullRope()
@@ -124,7 +113,7 @@ namespace MasterCraftsman
             }
         }
 
-        protected void ExplodeModel()
+        public void ExplodeModel()
         {
             if (modelAnim && isCombine)
             {
@@ -137,7 +126,7 @@ namespace MasterCraftsman
             }
         }
 
-        protected void CombineModel()
+        public void CombineModel()
         {
             if (modelAnim && !isCombine)
             {
@@ -150,11 +139,10 @@ namespace MasterCraftsman
             }
         }
 
-        protected void OnClose()
+        public override void OnClose()
         {
             MenuView.Instance.OnChangeView(true);
-            canvasGroup.DisplayCanvasGroup(false);
-            transform.DOScale(0, 0.5f).OnComplete(() => { Destroy(gameObject); });
+            base.OnClose();
         }
     }
 }

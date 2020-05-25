@@ -38,32 +38,42 @@ namespace MasterCraftsman
 
         public static T LoadAndInit<T>(string path, Vector3 position = default(Vector3), Quaternion rotation = default(Quaternion), Transform parent = null) where T : Object
         {
-            T instance = null;
+            T go = null;
             if (!string.IsNullOrEmpty(path))
             {
-                instance = Load<T>(path);
-                if (instance)
+                go = Load<T>(path);
+                if (go)
                 {
-                    instance = Init<T>(instance, position, rotation, parent);
+                    T instance = Init<T>(go, position, rotation, parent);
+                    instance.name = go.name;
                     return instance;
                 }
             }
-            return instance;
+
+            return go;
         }
 
         /// <summary>
         /// 加载View
         /// </summary>
-        public SunmaoViewBase OpenView()
+        public SunmaoView OpenView()
         {
-            string path = "Prefabs/SunmaoView/SunmaoView";
-            SunmaoViewBase view = LoadAndInit<SunmaoViewBase>(path);
+            string path = "Prefabs/View/SunmaoView";
+            SunmaoView view = LoadAndInit<SunmaoView>(path);
             if (view)
             {
                 return view;
             }
 
             return null;
+        }
+
+        public T OpenView<T>() where T : CraftsViewBase
+        {
+            string path = "Prefabs/View/SunmaoView";
+            
+
+            return default(T);
         }
     }
 }

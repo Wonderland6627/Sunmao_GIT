@@ -125,7 +125,7 @@ namespace MasterCraftsman
         {
             if (eventData.clickCount == 2)
             {
-                SunmaoViewBase view = ResourcesManager.Instance.OpenView();
+                SunmaoView view = ResourcesManager.Instance.OpenView();
                 view.OnInit(currentSunmao.name);
                 MenuView.Instance.OnChangeView(false);
             }

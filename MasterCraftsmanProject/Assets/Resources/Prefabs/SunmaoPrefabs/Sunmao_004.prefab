@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8164aec38c81e242865ca2fb5408f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sunmaoName: 
+  sunmaoName: "\u70DF\u888B\u69AB"
 --- !u!114 &114924240739122986
 MonoBehaviour:
   m_ObjectHideFlags: 1
