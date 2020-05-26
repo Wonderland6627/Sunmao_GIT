@@ -572,6 +572,7 @@ MonoBehaviour:
   goodsNameText: {fileID: 114707676014381754}
   explodeBtn: {fileID: 114961074036673874}
   combineBtn: {fileID: 114887593495229784}
+  jointTipsController: {fileID: 0}
 --- !u!114 &114887593495229784
 MonoBehaviour:
   m_ObjectHideFlags: 1

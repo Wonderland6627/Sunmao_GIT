@@ -28,6 +28,8 @@ namespace MasterCraftsman
         public Button explodeBtn;
         [Header("合并按钮")]
         public Button combineBtn;
+        [Header("提示控制")]
+        public JointTipsController jointTipsController;
 
         private bool isCombine = true;//是否为合并状态
         private const string goodsPath = "Prefabs/SunmaoPrefabs/";
